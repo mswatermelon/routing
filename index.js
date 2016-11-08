@@ -36,7 +36,7 @@ let middleware = (req, res, next) => {
 app.post('/post', middleware, (req, res) => {
   let body = req.body;
 
-  if (body) res.send(JSON.stringify(body));
+  if (Object.keys(body).length !== 0) res.send(JSON.stringify(body));
   else res.status(400).send('Not Found');
 });
 
